@@ -72,7 +72,7 @@ df_filtered = df.loc[[0, 1, 2]]  # Seleciona os índices 0, 1 e 2
 Filtra as linhas que estão em um intervalo específico.
 
 ```python
-df_filtered = df[df['Coluna'].between(
+df_filtered = df[df['Coluna'].between(10, 20)]
 ```
 
 
