@@ -75,4 +75,76 @@ Filtra as linhas que estão em um intervalo específico.
 df_filtered = df[df['Coluna'].between(10, 20)]
 ```
 
+### Antes de tentar converter, é útil inspecionar os valores para identificar quais não são datas.
+```python
+# Identificar valores não convertíveis em datetime
+invalid_values = df[~pd.to_datetime(df['WindowStartTime'], errors='coerce').notna()]
+print(invalid_values)
+```
+
+###Filtrar Valores Inválidos Antes da Conversão
+```python
+# Remover valores inválidos antes da conversão
+df = df[pd.to_datetime(df['WindowStartTime'], errors='coerce').notna()]
+```
+
+# Filtrando datas: 
+
+### Filtrar por data específica (ignorar o horário)
+```python
+# Exemplo de DataFrame
+data = {
+    'WindowStartTime': ['2025-03-06T10:21:30', '2025-03-06T15:45:00', '2025-03-07T12:00:00'],
+    'Interactive': [100, 200, 300],
+    'Background': [50, 75, 125]
+}
+df = pd.DataFrame(data)
+
+# Converter a coluna WindowStartTime para datetime
+df['WindowStartTime'] = pd.to_datetime(df['WindowStartTime'])
+
+# Filtrar por data específica (ignorar o horário)
+filtered_df = df[df['WindowStartTime'].dt.date == pd.to_datetime('2025-03-06').date()]
+```
+
+
+### Filtrar por mais de uma data(ignorar o horário)
+```python
+# Lista de datas de interesse
+dates_of_interest = [pd.to_datetime('2025-03-06').date(), pd.to_datetime('2025-03-07').date()]
+
+# Filtrar o DataFrame
+filtered_df = df[df['WindowStartTime'].dt.date.isin(dates_of_interest)]
+
+print(filtered_df)
+```
+
+### Para filtrar os dados de um DataFrame pandas com base em um intervalo de horário (por exemplo, de 9h às 14h)
+```python
+# Exemplo de DataFrame
+data = {
+    'WindowStartTime': ['2025-03-06T08:30:00', '2025-03-06T10:21:30', '2025-03-06T14:15:00', '2025-03-06T09:45:00'],
+    'Value': [100, 200, 300, 400]
+}
+df = pd.DataFrame(data)
+
+# Converter a coluna WindowStartTime para datetime
+df['WindowStartTime'] = pd.to_datetime(df['WindowStartTime'])
+
+# Filtrar as linhas com horário entre 9h e 14h
+filtered_df = df[df['WindowStartTime'].dt.hour.between(9, 14)]
+
+print(filtered_df)
+```
+
+### Filtrar por mais de uma data(ignorar o horário)
+```python
+
+```
+
+
+
+# Converter para datetime
+df['WindowStartTime'] = pd.to_datetime(df['WindowStartTime'])
+```
 
