@@ -15,6 +15,16 @@ Chegou a hora de mergulhar na **segunda aula da Imersão Dados com Python** e av
 
 Nesta etapa, você irá aprender técnicas fundamentais de **limpeza e preparação de dados com Pandas**, essenciais para garantir a qualidade das suas análises.
 
+O foco está em:
+
+- Identificar e lidar com dados faltantes  
+- Organizar colunas  
+- Aplicar filtros  
+- Gerar estatísticas descritivas  
+
+🔗 [Link do projeto](https://github.com/guilhermeonrails/idcp-alura/blob/ZQ19L5/Roteiro_Imers%C3%A3o_Dados_com_Python.ipynb)  
+🔗 [Como criar um repositório remoto no GitHub](https://www.alura.com.br/artigos/criando-repositorio-remoto-github)
+
 ---
 
 ## Links importantes para você acompanhar a aula
