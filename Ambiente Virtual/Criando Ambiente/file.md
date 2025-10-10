@@ -30,6 +30,8 @@ a versão correta seja utilizada no momento correto.
 qualquer biblioteca disponível no PyPI (Python Package Index), que é o repositório
 oficial de pacotes para Python.
 
+ Se o pip.exe estiver bloqueado, tente usar o pip via Python: `python -m pip install pandas`
+
 **Venv**: Ferramenta nativa do Python para criar ambientes virtuais. Com o venv, você
 pode configurar facilmente um ambiente isolado dentro do seu projeto. Ela faz parte da
 instalação padrão do Python, o que facilita seu uso em diferentes sistemas operacionais
