@@ -72,10 +72,10 @@ df['WindowStartTime'] = pd.to_datetime(df['WindowStartTime'])
 resultado = df.groupby(df['WindowStartTime'].dt.date).size().reset_index(name='Quantidade de Linhas')
 ```
 
-### 
+### Converter para datetime 
 ```python
 
-
+df['WindowStartTime'] = pd.to_datetime(df['WindowStartTime'])
 ```
 
 
